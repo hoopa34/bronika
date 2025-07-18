@@ -1,10 +1,12 @@
 import 'package:bronika/global/global_colors.dart';
 import 'package:bronika/global/global_design.dart';
 import 'package:bronika/global/global_icons.dart';
+import 'package:bronika/global/objects/object_place.dart';
 import 'package:flutter/material.dart';
 
 class WidgetCart extends StatelessWidget {
-  const WidgetCart({super.key});
+  final ObjectPlace place;
+  const WidgetCart({super.key, required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -16,27 +18,48 @@ class WidgetCart extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(),
+          AspectRatio(
+            aspectRatio: 1.5,
+            child: ClipRRect(
+              borderRadius: BorderRadiusGeometry.all(
+                Radius.circular(GlobalDesign.globalRadius),
+              ),
+              child: Image.asset(place.images[0], fit: BoxFit.cover),
+            ),
+          ),
+
+          SizedBox(height: GlobalDesign.globalPadding),
+
           Container(
             decoration: GlobalDesign.highlightCartDesign,
             padding: EdgeInsets.all(GlobalDesign.globalSmallPadding),
             child: Text("RESTORAN"),
           ),
-          Text("Mediterranean Restaurant", style: GlobalDesign.cardTitleStyle),
+
+          Text(place.name, style: GlobalDesign.cardTitleStyle, maxLines: 1),
+
           Row(
             children: [
               Icon(GlobalIcons.rating, color: GlobalColors.buttonHilightColor),
               SizedBox(width: GlobalDesign.globalSmallPadding),
-              Text("4.5", style: GlobalDesign.ratingStyle),
+              Text(
+                "${place.rating}",
+                style: GlobalDesign.ratingStyle,
+                maxLines: 1,
+              ),
               SizedBox(width: GlobalDesign.globalSmallPadding),
-              Text("(120)", style: GlobalDesign.geoStyle),
+              Text(
+                "${place.ratingPoints}",
+                style: GlobalDesign.geoStyle,
+                maxLines: 1,
+              ),
             ],
           ),
           Row(
             children: [
               Icon(GlobalIcons.location, color: GlobalColors.iconColor),
               SizedBox(width: GlobalDesign.globalSmallPadding),
-              Text("123 Main St, Tashkent", style: GlobalDesign.geoStyle),
+              Text(place.address, style: GlobalDesign.geoStyle, maxLines: 1),
             ],
           ),
           Spacer(),
