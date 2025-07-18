@@ -13,15 +13,40 @@ final class ManagerLoaded extends ManagerState {
   final List<ObjectPlace> places;
   final List<ObjectPlace> booked;
 
-  const ManagerLoaded({required this.places, required this.booked});
+  final List<ObjectPlace> placesRecomended;
+  final List<ObjectPlace> placesNearby;
+  final List<ObjectPlace> placesOther;
 
-  ManagerLoaded copyWith(List<ObjectPlace>? places, List<ObjectPlace>? booked) {
+  const ManagerLoaded({
+    required this.places,
+    required this.booked,
+    required this.placesNearby,
+    required this.placesOther,
+    required this.placesRecomended,
+  });
+
+  ManagerLoaded copyWith(
+    List<ObjectPlace>? places,
+    List<ObjectPlace>? booked,
+    List<ObjectPlace>? placesRecomended,
+    List<ObjectPlace>? placesNearby,
+    List<ObjectPlace>? placesOther,
+  ) {
     return ManagerLoaded(
       booked: booked ?? this.booked,
       places: places ?? this.places,
+      placesRecomended: placesRecomended ?? this.placesRecomended,
+      placesOther: placesOther ?? this.placesOther,
+      placesNearby: placesNearby ?? this.placesNearby,
     );
   }
 
   @override
-  List<Object> get props => [places, booked];
+  List<Object> get props => [
+    places,
+    booked,
+    placesNearby,
+    placesOther,
+    placesRecomended,
+  ];
 }

@@ -13,9 +13,20 @@ class ManagerBloc extends Bloc<ManagerEvent, ManagerState> {
     List<ObjectPlace> avialablePlaces = event.places;
     List<ObjectPlace> bookedPlaces = [];
 
+    List<ObjectPlace> placesNearby = avialablePlaces;
+    List<ObjectPlace> placesOther = avialablePlaces;
+    List<ObjectPlace> placesRecomended = avialablePlaces;
+
+    placesNearby.shuffle();
+    placesOther.shuffle();
+    placesRecomended.shuffle();
+
     ManagerLoaded baseState = ManagerLoaded(
       places: avialablePlaces,
       booked: bookedPlaces,
+      placesNearby: placesNearby,
+      placesOther: placesOther,
+      placesRecomended: placesRecomended
     );
 
     emit(baseState);

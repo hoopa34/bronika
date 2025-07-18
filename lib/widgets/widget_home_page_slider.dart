@@ -8,9 +8,7 @@ class WidgetHomePageSlider extends StatelessWidget {
   const WidgetHomePageSlider({super.key, required this.places});
 
   @override
-  Widget build(BuildContext context) {
-    places.shuffle();
-    
+  Widget build(BuildContext context) {    
     return AspectRatio(
       aspectRatio: 1,
       child: ListView.separated(

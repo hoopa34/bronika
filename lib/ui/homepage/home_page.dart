@@ -17,6 +17,7 @@ class HomePage extends StatelessWidget {
         if (state is! ManagerLoaded) {
           return const Center(child: CircularProgressIndicator());
         }
+
         return Scaffold(
           backgroundColor: GlobalColors.backgroundColor,
           body: Stack(
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
                   ),
 
                   SliverToBoxAdapter(
-                    child: WidgetHomePageSlider(places: state.places),
+                    child: WidgetHomePageSlider(places: state.placesRecomended),
                   ),
 
                   SliverToBoxAdapter(
@@ -70,7 +71,7 @@ class HomePage extends StatelessWidget {
                   ),
 
                   SliverToBoxAdapter(
-                    child: WidgetHomePageSlider(places: state.places),
+                    child: WidgetHomePageSlider(places: state.placesNearby),
                   ),
 
                   SliverToBoxAdapter(
@@ -84,7 +85,7 @@ class HomePage extends StatelessWidget {
                   ),
 
                   SliverToBoxAdapter(
-                    child: WidgetHomePageSlider(places: state.places),
+                    child: WidgetHomePageSlider(places: state.placesOther),
                   ),
 
                   SliverToBoxAdapter(
