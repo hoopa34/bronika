@@ -1,0 +1,80 @@
+import 'package:bronika/global/global_colors.dart';
+import 'package:bronika/global/global_design.dart';
+import 'package:bronika/widgets/widget_home_page_filters.dart';
+import 'package:bronika/widgets/widget_home_page_search_bar.dart';
+import 'package:bronika/widgets/widget_home_page_slider.dart';
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: GlobalColors.backgroundColor,
+      body: Stack(
+        children: [
+          // Container(
+          //   decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //       begin: Alignment.bottomRight,
+          //       end: Alignment.topLeft,
+          //       colors: [
+          //         GlobalColors.mainThirdColor,
+          //         GlobalColors.mainSecondColor,
+          //         GlobalColors.mainColor,
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          CustomScrollView(
+            slivers: [
+              const SliverAppBar(
+                toolbarHeight: 0,
+                backgroundColor: GlobalColors.backgroundColor,
+              ),
+
+              SliverToBoxAdapter(child: WidgetHomePageSearchBar()),
+
+              SliverToBoxAdapter(child: WidgetHomePageFilters()),
+
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.all(GlobalDesign.globalPadding),
+                  child: Text(
+                    "Recommended for You",
+                    style: GlobalDesign.titleStyle,
+                  ),
+                ),
+              ),
+
+              SliverToBoxAdapter(child: WidgetHomePageSlider()),
+
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.all(GlobalDesign.globalPadding),
+                  child: Text("Nearby Offers", style: GlobalDesign.titleStyle),
+                ),
+              ),
+
+              SliverToBoxAdapter(child: WidgetHomePageSlider()),
+
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.all(GlobalDesign.globalPadding),
+                  child: Text("Other Places", style: GlobalDesign.titleStyle),
+                ),
+              ),
+
+              SliverToBoxAdapter(child: WidgetHomePageSlider()),
+
+              SliverToBoxAdapter(
+                child: SizedBox(height: GlobalDesign.globalPadding),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
