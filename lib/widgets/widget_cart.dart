@@ -34,7 +34,7 @@ class WidgetCart extends StatelessWidget {
           Container(
             decoration: GlobalDesign.highlightCartDesign,
             padding: EdgeInsets.all(GlobalDesign.globalSmallPadding),
-            child: Text("RESTORAN"),
+            child: Text(GlobalIcons.filterToStringList[place.tag]?.toUpperCase() ?? "ERROR"),
           ),
 
           Text(place.name, style: GlobalDesign.cardTitleStyle, maxLines: 1),

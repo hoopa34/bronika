@@ -33,9 +33,11 @@ class WidgetPlaceImages extends StatelessWidget {
             AspectRatio(
               aspectRatio: 2.75,
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Flexible(
-                    flex: 1,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5 - 24,
+                    height: MediaQuery.of(context).size.width * 0.5 - 40,
                     child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.all(
                         Radius.circular(GlobalDesign.globalRadius),
@@ -44,13 +46,14 @@ class WidgetPlaceImages extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: GlobalDesign.globalPadding),
-                  Flexible(
-                    flex: 1,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5 - 24,
+                    height: MediaQuery.of(context).size.width * 0.5 - 40,
                     child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.all(
                         Radius.circular(GlobalDesign.globalRadius),
                       ),
-                      child: Image.asset(place.images[2], fit: BoxFit.cover),
+                      child: Image.asset(place.images[2], fit: BoxFit.fill),
                     ),
                   ),
                 ],

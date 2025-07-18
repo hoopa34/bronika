@@ -1,6 +1,7 @@
 import 'package:bronika/global/global_colors.dart';
 import 'package:bronika/global/global_design.dart';
 import 'package:bronika/global/objects/object_place.dart';
+import 'package:bronika/ui/homepage/payment_page.dart';
 import 'package:bronika/widgets/widget_place_images.dart';
 import 'package:flutter/material.dart';
 
@@ -17,13 +18,24 @@ class PlacePage extends StatelessWidget {
             MediaQuery.of(context).size.width - GlobalDesign.globalPadding * 2,
         child: TextButton(
           style: GlobalDesign.highlightButtonStyle,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PaymentPage(place: place),
+              ),
+            );
+          },
           child: Text("RESERVE", style: GlobalDesign.titleStyle),
         ),
       ),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(backgroundColor: GlobalColors.backgroundColor),
+          SliverAppBar(
+            backgroundColor: GlobalColors.backgroundColor,
+            title: Text(place.name),
+            centerTitle: true,
+          ),
 
           SliverToBoxAdapter(child: WidgetPlaceImages(place: place)),
 

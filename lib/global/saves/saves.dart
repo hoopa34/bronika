@@ -1,3 +1,4 @@
+import 'package:bronika/global/global_icons.dart';
 import 'package:bronika/global/global_images.dart';
 import 'package:bronika/global/objects/object_place.dart';
 
@@ -26,6 +27,7 @@ abstract class SavesPlaces {
     description:
         'Famous for its authentic Uzbek plov cooked in giant kazan pots. Open kitchen lets diners watch the process.',
     price: 12.0,
+    tag: GlobalIcons.restaurants,
   );
 
   static final ObjectPlace milliyTaomlarRestaurant = ObjectPlace(
@@ -37,6 +39,7 @@ abstract class SavesPlaces {
     description:
         'Traditional Uzbek cuisine including kebabs, manti, dumplings, soups and salads.',
     price: 10.0,
+    tag: GlobalIcons.restaurants,
   );
 
   static final ObjectPlace cinematica = ObjectPlace(
@@ -48,6 +51,7 @@ abstract class SavesPlaces {
     description:
         'Modern multiplex cinema (IMAX & 2D), shows movies in English regularly.',
     price: 6.0,
+    tag: GlobalIcons.movies,
   );
 
   static final cinemaplex = ObjectPlace(
@@ -59,6 +63,7 @@ abstract class SavesPlaces {
     description:
         'Four screening halls with Dolby Digital, recliner seats, snack bar.',
     price: 5.0,
+    tag: GlobalIcons.movies,
   );
 
   static final planetarium = ObjectPlace(
@@ -70,6 +75,7 @@ abstract class SavesPlaces {
     description:
         'Family entertainment complex with 7D cinema, planetarium, interactive exhibits.',
     price: 8.0,
+    tag: GlobalIcons.sports,
   );
 
   static final cityParkFitness = ObjectPlace(
@@ -81,6 +87,7 @@ abstract class SavesPlaces {
     description:
         'Modern fitness club with gym equipment, group classes, personal trainers.',
     price: 20.0,
+    tag: GlobalIcons.sports,
   );
 
   static final alisherNavoiOpera = ObjectPlace(
@@ -92,6 +99,7 @@ abstract class SavesPlaces {
     description:
         'Uzbek national opera and ballet theatre, elegant Soviet-era building.',
     price: 15.0,
+    tag: GlobalIcons.theaters,
   );
 
   static final ilkhomIndependentTheatre = ObjectPlace(
@@ -103,6 +111,7 @@ abstract class SavesPlaces {
     description:
         'Uzbekistan’s first independent theatre, known for avant‑garde performances.',
     price: 12.0,
+    tag: GlobalIcons.theaters,
   );
 
   static final hertzUzbekistan = ObjectPlace(
@@ -114,6 +123,7 @@ abstract class SavesPlaces {
     description:
         'International car rental agency offering wide fleet, including electric cars.',
     price: 50.0,
+    tag: GlobalIcons.carRental,
   );
 
   static final egarCarRental = ObjectPlace(
@@ -125,6 +135,7 @@ abstract class SavesPlaces {
     description:
         'Local rental with fast paperwork, range from economy to premium vehicles.',
     price: 45.0,
+    tag: GlobalIcons.carRental,
   );
 }
 
