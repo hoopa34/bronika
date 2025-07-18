@@ -39,6 +39,8 @@ abstract class GlobalDesign {
   static final TextStyle titleStyle = TextStyle(color: GlobalColors.titleColor, fontSize: 20);
   static final TextStyle cardTitleStyle = TextStyle(color: GlobalColors.titleColor, fontSize: 18);
 
+  static final TextStyle descriptionStyle = TextStyle(color: GlobalColors.iconColor, fontSize: 16);
+
   static final TextStyle geoStyle = TextStyle(color: GlobalColors.iconColor, fontSize: 10);
   static final TextStyle ratingStyle = TextStyle(color: GlobalColors.buttonHilightColor, fontSize: 12);
 }

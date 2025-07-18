@@ -2,6 +2,7 @@ import 'package:bronika/global/global_colors.dart';
 import 'package:bronika/global/global_design.dart';
 import 'package:bronika/global/global_icons.dart';
 import 'package:bronika/global/objects/object_place.dart';
+import 'package:bronika/ui/homepage/place_page.dart';
 import 'package:flutter/material.dart';
 
 class WidgetCart extends StatelessWidget {
@@ -64,9 +65,16 @@ class WidgetCart extends StatelessWidget {
           ),
           Spacer(),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PlacePage(place: place),
+                ),
+              );
+            },
             style: GlobalDesign.highlightButtonStyle,
-            child: Text("REZERV", style: GlobalDesign.cardTitleStyle),
+            child: Text("REZERVE", style: GlobalDesign.cardTitleStyle),
           ),
         ],
       ),

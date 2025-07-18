@@ -9,6 +9,8 @@ class WidgetHomePageSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {    
+    places.shuffle();
+    
     return AspectRatio(
       aspectRatio: 1,
       child: ListView.separated(
