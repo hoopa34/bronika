@@ -3,6 +3,8 @@ import 'package:bronika/global/global_design.dart';
 import 'package:bronika/global/objects/object_place.dart';
 import 'package:bronika/ui/homepage/payment_page.dart';
 import 'package:bronika/widgets/widget_place_images.dart';
+import 'package:bronika/widgets/widget_place_page_date_picker.dart';
+import 'package:bronika/widgets/widget_place_page_number_picker.dart';
 import 'package:flutter/material.dart';
 
 class PlacePage extends StatelessWidget {
@@ -57,8 +59,43 @@ class PlacePage extends StatelessWidget {
               ),
             ),
           ),
+
+          SliverToBoxAdapter(
+            child: SizedBox(height: GlobalDesign.globalPadding),
+          ),
+
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: GlobalDesign.globalPadding,
+              ),
+              child: Text("Choose date", style: GlobalDesign.titleStyle),
+            ),
+          ),
+
+          const SliverToBoxAdapter(child: WidgetPlacePageDatePicker()),
+
+          SliverToBoxAdapter(
+            child: SizedBox(height: GlobalDesign.globalPadding),
+          ),
+
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: GlobalDesign.globalPadding,
+              ),
+              child: Text("Choose number", style: GlobalDesign.titleStyle),
+            ),
+          ),
+
+          const SliverToBoxAdapter(
+            child: WidgetPlacePageNumberPicker(),
+          ),
+
+          SliverToBoxAdapter(child: SizedBox(height: 80)),
         ],
       ),
     );
   }
 }
+

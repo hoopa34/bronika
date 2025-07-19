@@ -17,7 +17,7 @@ abstract class GlobalDesign {
     color: GlobalColors.backgroundColor,
   );
 
-   static final BoxDecoration highlightCartDesign = BoxDecoration(
+  static final BoxDecoration highlightCartDesign = BoxDecoration(
     borderRadius: BorderRadius.all(Radius.circular(globalRadius)),
     color: GlobalColors.buttonHilightColor,
   );
@@ -39,14 +39,42 @@ abstract class GlobalDesign {
     ),
   );
 
-  static final TextStyle titleStyle = TextStyle(color: GlobalColors.titleColor, fontSize: 20);
-  static final TextStyle cardTitleStyle = TextStyle(color: GlobalColors.titleColor, fontSize: 18);
+  static final DatePickerThemeData datePickerThemeData = DatePickerThemeData(
+    backgroundColor: GlobalColors.backgroundColor,
+    rangePickerShape: RoundedRectangleBorder(
+      borderRadius: BorderRadiusGeometry.all(Radius.circular(globalRadius)),
+    ),
+  );
 
-  static final TextStyle descriptionStyle = TextStyle(color: GlobalColors.iconColor, fontSize: 16);
+  static final TextStyle titleStyle = TextStyle(
+    color: GlobalColors.titleColor,
+    fontSize: 20,
+  );
+  static final TextStyle cardTitleStyle = TextStyle(
+    color: GlobalColors.titleColor,
+    fontSize: 18,
+  );
 
-  static final TextStyle geoStyle = TextStyle(color: GlobalColors.iconColor, fontSize: 10);
-  static final TextStyle ratingStyle = TextStyle(color: GlobalColors.buttonHilightColor, fontSize: 12);
+  static final TextStyle descriptionStyle = TextStyle(
+    color: GlobalColors.iconColor,
+    fontSize: 16,
+  );
 
-  static final TextStyle addDescription = TextStyle(color: GlobalColors.cartColor, fontSize: 20);
-  static final TextStyle addTitle = TextStyle(color: GlobalColors.cartColor, fontSize: 36);
+  static final TextStyle geoStyle = TextStyle(
+    color: GlobalColors.iconColor,
+    fontSize: 10,
+  );
+  static final TextStyle ratingStyle = TextStyle(
+    color: GlobalColors.buttonHilightColor,
+    fontSize: 12,
+  );
+
+  static final TextStyle addDescription = TextStyle(
+    color: GlobalColors.cartColor,
+    fontSize: 20,
+  );
+  static final TextStyle addTitle = TextStyle(
+    color: GlobalColors.cartColor,
+    fontSize: 36,
+  );
 }
