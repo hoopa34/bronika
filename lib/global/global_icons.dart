@@ -1,3 +1,4 @@
+import 'package:bronika/global/global_colors.dart';
 import 'package:flutter/material.dart';
 
 abstract class GlobalIcons {
@@ -27,11 +28,44 @@ abstract class GlobalIcons {
   ];
 
   static final Map<IconData, String> filterToStringList = {
-    restaurants : "Restaurants",
-    movies : "Movies",
-    gaming : "Gaming",
-    sports : "Sports",
-    theaters : "Theaters",
-    carRental : "Car Rental",
+    restaurants: "Restaurants",
+    movies: "Movies",
+    gaming: "Gaming",
+    sports: "Sports",
+    theaters: "Theaters",
+    carRental: "Car Rental",
+  };
+
+  static final Map<IconData, List<Color>> filterToColorGradientList = {
+    restaurants: [
+      GlobalColors.mainColor,
+      GlobalColors.mainSecondColor,
+      GlobalColors.mainThirdColor,
+    ],
+    movies: [
+      GlobalColors.secondColor,
+      GlobalColors.secondSecondColor,
+      GlobalColors.secondThirdColor,
+    ],
+    gaming: [
+      GlobalColors.thirdColor,
+      GlobalColors.thirdSecondColor,
+      GlobalColors.thirdThirdColor,
+    ],
+    sports: [
+      GlobalColors.mainColor,
+      GlobalColors.mainSecondColor,
+      GlobalColors.mainThirdColor,
+    ],
+    theaters: [
+      GlobalColors.secondColor,
+      GlobalColors.secondSecondColor,
+      GlobalColors.secondThirdColor,
+    ],
+    carRental: [
+      GlobalColors.thirdColor,
+      GlobalColors.thirdSecondColor,
+      GlobalColors.thirdThirdColor,
+    ],
   };
 }

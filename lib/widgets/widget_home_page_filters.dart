@@ -13,9 +13,7 @@ class WidgetHomePageFilters extends StatelessWidget {
       aspectRatio: 5,
       child: ListView.separated(
         itemCount: GlobalIcons.filterList.length,
-        padding: EdgeInsets.symmetric(
-          horizontal: GlobalDesign.globalPadding,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: GlobalDesign.globalPadding),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
@@ -32,7 +30,7 @@ class WidgetHomePageFilters extends StatelessWidget {
                           TagPage(tag: GlobalIcons.filterList[index]),
                     ),
                   );
-    
+
                   // if (state.tagsSorted.contains(
                   //   GlobalIcons.filterList[index],
                   // )) {
@@ -49,15 +47,29 @@ class WidgetHomePageFilters extends StatelessWidget {
                   //   );
                   // }
                 },
-                icon: Icon(
-                  GlobalIcons.filterList[index],
-                  color: GlobalColors.iconColor,
-                  size: GlobalDesign.globalIconSize,
+                icon: ShaderMask(
+                  blendMode: BlendMode.srcIn,
+                  shaderCallback: (bounds) => LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors:
+                        GlobalIcons.filterToColorGradientList[GlobalIcons
+                            .filterList[index]] ??
+                        [
+                          GlobalColors.mainColor,
+                          GlobalColors.mainSecondColor,
+                          GlobalColors.mainThirdColor,
+                        ],
+                  ).createShader(bounds),
+                  child: Icon(
+                    GlobalIcons.filterList[index],
+                    color: GlobalColors.iconColor,
+                    size: GlobalDesign.globalIconSize,
+                  ),
                 ),
               ),
               Text(
-                GlobalIcons.filterToStringList[GlobalIcons
-                        .filterList[index]] ??
+                GlobalIcons.filterToStringList[GlobalIcons.filterList[index]] ??
                     "Error",
               ),
             ],
