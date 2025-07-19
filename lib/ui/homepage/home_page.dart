@@ -1,6 +1,7 @@
 import 'package:bronika/domain/bloc/manager_bloc.dart';
 import 'package:bronika/global/global_colors.dart';
 import 'package:bronika/global/global_design.dart';
+import 'package:bronika/widgets/widget_home_pade_ad.dart';
 import 'package:bronika/widgets/widget_home_page_filters.dart';
 import 'package:bronika/widgets/widget_home_page_search_bar.dart';
 import 'package:bronika/widgets/widget_home_page_slider.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
         if (state is! ManagerLoaded) {
           return const Center(child: CircularProgressIndicator());
         }
-        
+
         return Scaffold(
           backgroundColor: GlobalColors.backgroundColor,
           body: Stack(
@@ -42,9 +43,11 @@ class HomePage extends StatelessWidget {
                     backgroundColor: GlobalColors.backgroundColor,
                   ),
 
-                  SliverToBoxAdapter(child: WidgetHomePageSearchBar()),
+                  const SliverToBoxAdapter(child: WidgetHomePageSearchBar()),
 
-                  SliverToBoxAdapter(child: WidgetHomePageFilters()),
+                  const SliverToBoxAdapter(child: WidgetHomePadeAd()),
+
+                  const SliverToBoxAdapter(child: WidgetHomePageFilters()),
 
                   SliverToBoxAdapter(
                     child: Padding(

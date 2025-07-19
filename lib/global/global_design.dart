@@ -46,4 +46,7 @@ abstract class GlobalDesign {
 
   static final TextStyle geoStyle = TextStyle(color: GlobalColors.iconColor, fontSize: 10);
   static final TextStyle ratingStyle = TextStyle(color: GlobalColors.buttonHilightColor, fontSize: 12);
+
+  static final TextStyle addDescription = TextStyle(color: GlobalColors.cartColor, fontSize: 20);
+  static final TextStyle addTitle = TextStyle(color: GlobalColors.cartColor, fontSize: 36);
 }
