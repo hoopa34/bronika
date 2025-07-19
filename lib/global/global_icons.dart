@@ -7,6 +7,9 @@ abstract class GlobalIcons {
   static final IconData rating = Icons.star_rounded;
   static final IconData location = Icons.location_on;
 
+  static final IconData like = Icons.favorite_border;
+  static final IconData likeFill = Icons.favorite;
+
   static final IconData restaurants = Icons.restaurant_menu;
   static final IconData movies = Icons.movie_filter_rounded;
   static final IconData gaming = Icons.sports_esports;

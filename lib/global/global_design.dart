@@ -24,6 +24,8 @@ abstract class GlobalDesign {
 
   static final ButtonStyle roundedButtonStyle = IconButton.styleFrom(
     backgroundColor: GlobalColors.cartColor,
+    highlightColor: GlobalColors.buttonHilightColor,
+
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(globalRadius)),
     ),
@@ -31,6 +33,7 @@ abstract class GlobalDesign {
 
   static final ButtonStyle highlightButtonStyle = IconButton.styleFrom(
     backgroundColor: GlobalColors.buttonHilightColor,
+    highlightColor: GlobalColors.cartColor,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(globalRadius)),
     ),

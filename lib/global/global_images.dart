@@ -12,7 +12,7 @@ abstract class GlobalImages {
   static final String three_3 = "assets/images/3 (2).webp";
 
   static final String four_1 = "assets/images/4 (1).jpg";
-  static final String four_2 = "aassets/images/4 (2).jpg";
+  static final String four_2 = "assets/images/4 (2).jpg";
   static final String four_3 = "assets/images/4.jpg";
   
   static final String five_1 = "assets/images/5 (1).jpg";

@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         if (state is! ManagerLoaded) {
           return const Center(child: CircularProgressIndicator());
         }
-
+        
         return Scaffold(
           backgroundColor: GlobalColors.backgroundColor,
           body: Stack(

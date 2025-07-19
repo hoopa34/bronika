@@ -1,6 +1,7 @@
 import 'package:bronika/global/global_colors.dart';
 import 'package:bronika/global/global_design.dart';
 import 'package:bronika/global/global_icons.dart';
+import 'package:bronika/ui/homepage/tag_page.dart';
 import 'package:flutter/material.dart';
 
 class WidgetHomePageFilters extends StatelessWidget {
@@ -12,7 +13,9 @@ class WidgetHomePageFilters extends StatelessWidget {
       aspectRatio: 5,
       child: ListView.separated(
         itemCount: GlobalIcons.filterList.length,
-        padding: EdgeInsets.symmetric(horizontal: GlobalDesign.globalPadding),
+        padding: EdgeInsets.symmetric(
+          horizontal: GlobalDesign.globalPadding,
+        ),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
@@ -21,7 +24,31 @@ class WidgetHomePageFilters extends StatelessWidget {
             children: [
               IconButton(
                 style: GlobalDesign.roundedButtonStyle,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          TagPage(tag: GlobalIcons.filterList[index]),
+                    ),
+                  );
+    
+                  // if (state.tagsSorted.contains(
+                  //   GlobalIcons.filterList[index],
+                  // )) {
+                  //   bloc.add(
+                  //     ManagerTagSortedRemoveEvent(
+                  //       tag: GlobalIcons.filterList[index],
+                  //     ),
+                  //   );
+                  // } else {
+                  //   bloc.add(
+                  //     ManagerTagSortedAddEvent(
+                  //       tag: GlobalIcons.filterList[index],
+                  //     ),
+                  //   );
+                  // }
+                },
                 icon: Icon(
                   GlobalIcons.filterList[index],
                   color: GlobalColors.iconColor,
@@ -29,7 +56,8 @@ class WidgetHomePageFilters extends StatelessWidget {
                 ),
               ),
               Text(
-                GlobalIcons.filterToStringList[GlobalIcons.filterList[index]] ??
+                GlobalIcons.filterToStringList[GlobalIcons
+                        .filterList[index]] ??
                     "Error",
               ),
             ],
